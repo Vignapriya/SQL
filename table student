@@ -1,0 +1,44 @@
+CREATE TABLE students(
+ID int,
+name varchar(100),
+age int
+);
+
+alter table students add grade varchar(100);
+
+
+insert into students (ID,name,age,grade) values
+(101,"john",29,"A"),
+(102,"john doe",22,"B"),
+(103,"john smith",19,"C"),
+(104,"alice brown",21,"A"),
+(105,"charles devis",20,"B"),
+(106,"emma wilson",23,"A"),
+(107,"michael",20,"C"),
+(108,"olivia",19,"B"),
+(109,"william",21,"A"),
+(110,"sophia",22,"C");
+
+update students set age=21 where id=101;
+
+
+select * from students where age>=19;
+select * from students where name="william" or name="alice brown";
+select * from students where name in("william","alice brown");
+
+select * from students where grade="A" or grade="B" and age>=20;
+select * from students where age between 18 and 20;
+select * from students where age<18;
+select * from students where grade>"B";
+select count(*) from students;
+select avg(age) from students;
+select sum(age) from students where grade="A" or grade="B";
+select count(name),grade from students group by grade order by grade desc;
+select avg(age),grade from students group by grade;
+select avg(age),grade from students group by grade having avg(age)>20;
+select count(*) from students group by grade;
+select count(*) from students group by grade having count(name)>3;
+select avg(age) from students group by grade having avg(age) between 20 and 21;
+select name,age from students order by age asc;
+select name,age from students where grade="A" or grade="B" order by age desc;
+select name,grade from students order by name asc; 
