@@ -1,0 +1,17 @@
+CREATE TABLE EmployeeDepartment
+(
+    employee_id int,
+    employee_name varchar(100),
+    job varchar(100),
+    manager_id int,
+    salary int
+);
+INSERT INTO EmployeeDepartment(employee_id,employee_name,job,manager_id,salary) VALUES
+(7369,"SMITH","CLERK",7902,800),
+(7566,"JONES","MANAGER",7839,3000),
+(7782,"CLARK","MANAGER",7839,3000),
+(7788,"SCOTT","ANALYST",7566,4000);
+SELECT 
+SUM(salary) AS SUM,
+MIN (salary) as min,
+max(salary) as max from EmployeeDepartment;
