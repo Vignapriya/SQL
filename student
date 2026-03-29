@@ -1,0 +1,24 @@
+CREATE TABLE student(
+name varchar(100),
+age int,
+department varchar(100)
+);
+
+
+INSERT INTO  student VALUES ("John",23,"CSE");
+INSERT INTO student VALUES ("Praveen",45,"ECE");
+INSERT INTO  student VALUES ("Suresh",34,"EEE");
+
+SELECT * FROM student;
+
+update student set age=25 where age=45;
+update student set age=26 where name="John";
+
+select * from student;
+
+select * from student where name="John";
+
+delete from student where department="CSE";
+select * from student;
+delete from student;
+select * from student;
